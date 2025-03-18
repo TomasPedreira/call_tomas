@@ -55,7 +55,7 @@ struct _Text_box {
     size_t height;
     Color color1;
     Color color2;
-    char* text;
+    char text[1024];
     size_t font_size;
     bool clicked;
 };

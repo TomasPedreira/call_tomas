@@ -194,9 +194,10 @@ void update(app a){
 
             resize_element(a->pages[p]->elements[i], start, end);
         }
+        a->width = end.x;
+        a->height = end.y;
     }
-    a->width = GetScreenWidth();
-    a->height = GetScreenHeight();
+    
     switch (get_current_page(a)->type)
     {
         case MAIN_PAGE:
@@ -339,7 +340,6 @@ void resize_input(input_form in, Vector2 start, Vector2 end){
     size_t new_y = end.y*in->start.y/start.y;
     in->start = (Vector2){new_x, new_y};
     size_t new_font = end.y*in->font_size/start.y;
-    size_t text_size = MeasureText(in->text, in->font_size);
 }
 
 
